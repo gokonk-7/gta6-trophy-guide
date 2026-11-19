@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-checklist.jpg","note":"Checklist tab: progress header (13/55 earned, seeded), search + filters, spoiler-safe ON, trophy list with grade badges","path":"/","viewport":{"height":800,"width":1280}},{"file":"2-guide.jpg","note":"Trophy detail pane open on Positive Mental Attitude: full guide, missable warning, sources","path":"/","viewport":{"height":800,"width":1280}},{"file":"3-roadmap.jpg","note":"Roadmap tab: three phases to platinum with per-phase progress","path":"/","viewport":{"height":800,"width":1280}},{"file":"4-missables.jpg","note":"Missables tab + next-up planner: the Chapter 1 balcony warning, Yago race, save discipline","path":"/","viewport":{"height":800,"width":1280}}]
