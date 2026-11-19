@@ -4,54 +4,67 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Neon Leonida — GTA VI Trophy Guide &amp; Tracker</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="The best offline guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI: checklist, roadmap, missables and a cited guide for every trophy.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="hero">
   <svg class="skyline" viewBox="0 0 1280 160" preserveAspectRatio="none" aria-hidden="true">
     <defs>
-      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="sunset" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#ff5e7a"/>
-        <stop offset=".55" stop-color="#ff8a3d"/>
+        <stop offset="0.55" stop-color="#ff8a3d"/>
         <stop offset="1" stop-color="#ffc53d"/>
       </linearGradient>
     </defs>
-    <rect width="1280" height="160" fill="url(#sunset)"/>
-    <circle cx="980" cy="58" r="34" fill="#fff3d6" opacity=".95"/>
-    <path fill="#241a2e" d="M0 160V96h52v-22h38v22h30V70h44v26h26V58h40v38h34V84h46v12h28V64h42v32h30V78h48v18h26V60h44v36h32V82h46v14h28V66h42v30h34V80h44v16h30V62h40v34h28V84h46v12h30V68h42v28h34V82h44v14h28V64h42v32h30V78h46v18h32V160z"/>
-    <path fill="#1a1224" d="M0 160v-34h60v10h44V104h52v22h38V112h48v14h36V100h54v26h42V110h46v16h34V102h52v24h40V112h48v14h36V104h54v22h42V112h46v14h34V102h52v24h40V112h48v14h36V100h54v26h42V110h46v16h34V102h52v24h40V160z"/>
+    <rect x="0" y="0" width="1280" height="160" fill="url(#sunset)" opacity="0.22"/>
+    <circle cx="1020" cy="62" r="34" fill="#ffc53d" opacity="0.85"/>
+    <g fill="#0d0f14">
+      <rect x="0" y="90" width="70" height="70"/><rect x="80" y="60" width="54" height="100"/>
+      <rect x="144" y="100" width="84" height="60"/><rect x="238" y="46" width="60" height="114"/>
+      <rect x="308" y="86" width="72" height="74"/><rect x="390" y="70" width="48" height="90"/>
+      <rect x="448" y="104" width="90" height="56"/><rect x="548" y="58" width="58" height="102"/>
+      <rect x="616" y="92" width="76" height="68"/><rect x="702" y="40" width="64" height="120"/>
+      <rect x="776" y="84" width="70" height="76"/><rect x="856" y="64" width="52" height="96"/>
+      <rect x="918" y="96" width="80" height="64"/><rect x="1008" y="70" width="56" height="90"/>
+      <rect x="1074" y="100" width="84" height="60"/><rect x="1168" y="56" width="60" height="104"/>
+      <rect x="1238" y="92" width="42" height="68"/>
+    </g>
+    <g stroke="#0d0f14" stroke-width="3" fill="none">
+      <path d="M180 60 q6 -26 22 -30 q-4 16 2 22 q10 -12 22 -8 q-12 8 -12 16 l-6 0 q-14 -2 -28 0z"/>
+      <path d="M1140 56 q6 -26 22 -30 q-4 16 2 22 q10 -12 22 -8 q-12 8 -12 16 l-6 0 q-14 -2 -28 0z"/>
+    </g>
   </svg>
   <div class="hero-inner">
-    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
     <h1>Neon Leonida</h1>
-    <p class="sub">The complete trophy guide &amp; tracker — all 55 official trophies, the road to platinum, and the one trophy you can miss.</p>
-    <div class="progress" id="progress">
-      <div class="progress-top">
-        <span class="big"><strong id="earnedCount">0</strong><span class="of">/ 55 earned</span></span>
-        <span class="pct" id="pct">0%</span>
-      </div>
-      <div class="bar"><div class="fill" id="barFill" style="width:0%"></div></div>
-      <div class="grades" id="gradeCounts"></div>
-      <p class="eta" id="eta"></p>
-    </div>
+    <p class="tagline">The GTA VI trophy guide &amp; tracker — every trophy, a cited guide for each one, and a road to the platinum that works offline.</p>
   </div>
 </header>
 
-<nav class="tabs" role="tablist" aria-label="Guide sections">
-  <button class="tab active" data-tab="checklist" role="tab" aria-selected="true">Checklist <span class="key">1</span></button>
-  <button class="tab" data-tab="roadmap" role="tab" aria-selected="false">Roadmap <span class="key">2</span></button>
-  <button class="tab" data-tab="missables" role="tab" aria-selected="false">Missables <span class="key">3</span></button>
-  <button class="tab" data-tab="planner" role="tab" aria-selected="false">Next up <span class="key">4</span></button>
-  <button class="tab" data-tab="save" role="tab" aria-selected="false">Save &amp; sources <span class="key">5</span></button>
-</nav>
-
 <main>
-  <section id="tab-checklist" class="panel active" role="tabpanel">
+  <section class="progress" aria-label="Progress">
+    <div class="progress-big">
+      <span class="count"><span id="earnedCount">0</span><span class="of">/ 55</span></span>
+      <span class="pct" id="pct">0%</span>
+    </div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="barWrap"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+    <p class="grades" id="gradeBreak">Platinum 0/1 &middot; Gold 0/2 &middot; Silver 0/6 &middot; Bronze 0/46</p>
+    <p class="eta" id="eta">About 200h to the platinum from zero.</p>
+  </section>
+
+  <nav class="tabs" aria-label="Sections">
+    <button type="button" data-tab="checklist" class="active">Checklist</button>
+    <button type="button" data-tab="roadmap">Roadmap</button>
+    <button type="button" data-tab="missables">Missables</button>
+    <button type="button" data-tab="planner">Next up</button>
+    <button type="button" data-tab="save">Save &amp; sources</button>
+  </nav>
+
+  <section id="tab-checklist" class="tab active">
     <div class="controls">
-      <label class="search">Search
-        <input id="search" type="search" placeholder="Trophy name or guide text…  ( / )" autocomplete="off">
-      </label>
+      <label class="search-wrap">Search <input id="search" type="search" placeholder="Search trophies, e.g. bank vault" autocomplete="off"></label>
       <label>Grade
         <select id="fGrade">
           <option value="">All grades</option>
@@ -73,7 +86,7 @@
           <option value="side-story">Side story</option>
           <option value="one-off">One-off</option>
           <option value="money">Money</option>
-          <option value="completion">100% completion</option>
+          <option value="completion">Completion</option>
           <option value="platinum">Platinum</option>
         </select>
       </label>
@@ -85,68 +98,71 @@
           <option value="missable">Missable</option>
         </select>
       </label>
-      <label class="spoiler">Spoiler-safe
-        <span class="switch"><input id="spoiler" type="checkbox" checked> <span class="track"><span class="thumb"></span></span></span>
-        <span class="hint">Hides story &amp; hidden trophies until earned</span>
-      </label>
+      <label class="spoiler-wrap"><input id="spoiler" type="checkbox" checked> Spoiler-safe (hide story &amp; hidden trophies until earned)</label>
     </div>
-    <p class="count" id="listCount"></p>
+    <p class="list-count" id="listCount">55 of 55 trophies</p>
     <div class="layout">
-      <ul class="trophy-list" id="trophyList"></ul>
-      <aside class="detail" id="detail" aria-live="polite">
-        <p class="detail-empty">Select a trophy to read its full guide, sources and — where it matters — when it can be missed.</p>
+      <ul id="trophyList" class="trophy-list"></ul>
+      <aside id="detail" class="detail" aria-label="Trophy detail">
+        <p class="detail-empty">Pick a trophy to see its full guide, target and sources.</p>
       </aside>
     </div>
   </section>
 
-  <section id="tab-roadmap" class="panel" role="tabpanel">
-    <h2>The road to platinum</h2>
-    <p class="lede">Around 200 hours, in three phases. The story first, then the 100% checklist, then the strangers and the clean-up. Nothing on this road is missable except one meditation — see Missables.</p>
-    <div class="phases" id="phases"></div>
-    <div class="roadmap-note">
-      <h3>A Long Road — the 100% checklist</h3>
-      <p>Required <strong>in full</strong>: all robberies (8 bank vaults, 39 gang operations), underwater discoveries, every Shooting Range gold medal, all drone races, Bret's 15 Target Decks. Only a share of the rest: 100 optional missions, 200 of 277 vehicle scans, 100 of 255 animal studies, 15 of 18 meditations, 70 of 80 challenges, 300 stunts, 100 WAiNK scans. The checklist appears under Progress &gt; Stats &gt; 100% Completion after the story — everything you did before already counts.</p>
-    </div>
+  <section id="tab-roadmap" class="tab">
+    <h2>The road to the platinum</h2>
+    <p>About 200 hours, no difficulty trophies, no mission replay and no New Game+ — so play the story once, save often, and clean up afterwards. Three phases, in order.</p>
+    <div id="roadmap"></div>
   </section>
 
-  <section id="tab-missables" class="panel" role="tabpanel">
+  <section id="tab-missables" class="tab">
     <h2>Missables &amp; save discipline</h2>
-    <p class="lede">Good news: GTA VI is forgiving. There is one trophy that may be missable, one time-sensitive race, and one permanent choice to avoid.</p>
-    <div class="miss-cards" id="missCards"></div>
-    <div class="save-box">
-      <h3>Save discipline</h3>
-      <p>You get <strong>15 manual save slots plus 1 autosave</strong>. Keep one manual save at the <strong>start of every chapter</strong> and one <strong>before the final mission</strong>. There is no mission replay and no New Game+, so a chapter-start save is your only way back. Cheats disable trophies and saving — do not use them on a platinum run.</p>
+    <div class="warn">
+      <h3>&#9888; Positive Mental Attitude — the only possibly-missable trophy</h3>
+      <p>Lucia's balcony meditation in Chapter 1, on the morning after Down to Earth, disappears after Chapter 1. Meditate at 18 spots across Leonida; meditating with Jason and Lucia together counts twice, and the last spot needs both characters (possible after Coffee Break in Chapter 2). Track it under Progress &gt; Collections &gt; Exploration &gt; Meditations. It is not yet confirmed whether the Chapter 1 spot is required — treat it as required and do it early.</p>
     </div>
+    <div class="warn">
+      <h3>&#9200; Yago's race — time-sensitive, not missable yet</h3>
+      <p>Race Against Yago appears in Chapter 3 with an hourglass icon and counts toward Strangers &amp; Freaks. Do it the moment it appears, and save first.</p>
+    </div>
+    <div class="warn">
+      <h3>&#128680; Irredeemable criminal profile is permanent</h3>
+      <p>Actions Speak Louder needs 500 Criminal Profile actions, and most players get it without trying. Do not push toward an Irredeemable profile on purpose — that rating does not come back.</p>
+    </div>
+    <h3>Save discipline</h3>
+    <p>15 manual save slots plus 1 autosave. Keep one save at the start of every chapter, and one more from just before the final mission. Cheats disable trophies and saving, so leave them alone on a trophy run.</p>
   </section>
 
-  <section id="tab-planner" class="panel" role="tabpanel">
+  <section id="tab-planner" class="tab">
     <h2>Next up</h2>
-    <p class="lede">What to do next, in order. Time-sensitive things first, then the story order, then the grind — so you never have to wonder what is worth doing now.</p>
-    <ol class="nextup" id="nextUp"></ol>
+    <p>What to do next, in order: the time-sensitive things first, then the story, then the grind.</p>
+    <ul class="nextup" id="nextup"></ul>
   </section>
 
-  <section id="tab-save" class="panel" role="tabpanel">
+  <section id="tab-save" class="tab">
     <h2>Save &amp; sources</h2>
-    <p class="lede">Your checklist lives in this browser (localStorage) — nothing leaves your machine. Export a backup before you clear your browser data, and import it back on another device.</p>
+    <p>Your checklist and notes live in this browser only (localStorage). Export a backup before you clear your browser data.</p>
     <div class="save-actions">
-      <button id="exportBtn" class="btn">Export progress (.json)</button>
-      <label class="btn import-btn">Import progress<input id="importFile" type="file" accept="application/json,.json" hidden></label>
-      <button id="resetBtn" class="btn danger">Reset all progress</button>
+      <button type="button" id="exportBtn">Export progress (JSON)</button>
+      <label class="import-label">Import backup <input id="importFile" type="file" accept=".json,application/json"></label>
+      <button type="button" id="resetBtn">Reset all progress</button>
     </div>
-    <p class="status" id="saveStatus" aria-live="polite"></p>
+    <p class="save-status" id="saveStatus" role="status"></p>
     <h3>Sources</h3>
-    <ul class="sources">
-      <li><a href="https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series">GTABase — GTA 6 Achievements &amp; Trophies list</a> — official names, descriptions, grades and how-to steps.</li>
-      <li><a href="https://outputlag.com/guides/gta-6-trophy-list/">Outputlag — GTA 6 Trophy List</a> — full list and how-to steps; agrees exactly with GTABase on all 55.</li>
-      <li>Exophase and PSNProfiles are the canonical trophy databases; Exophase blocked our fetch, so how-to steps cite GTABase and Outputlag. All 55 names, descriptions and grades were cross-checked and agree exactly across the sources.</li>
+    <p>Names, descriptions and grades are the official 55-trophy list, cross-checked against GTABase and Outputlag, which agree exactly, and the kit's starter data. Every guide is written in our own words; specific locations and steps cite their source in the trophy detail pane.</p>
+    <ul>
+      <li><a href="https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series">GTABase — GTA 6 achievements &amp; trophies list</a></li>
+      <li><a href="https://outputlag.com/guides/gta-6-trophy-list/">Outputlag — GTA 6 trophy list</a></li>
+      <li><a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase — GTA VI trophy database</a></li>
+      <li><a href="https://psnprofiles.com/trophies/grand-theft-auto-vi">PSNProfiles — GTA VI trophies</a></li>
     </ul>
-    <h3>About this guide</h3>
-    <p>Guides are written in our own words from the official descriptions and the cited sources. Where a trophy's exact steps are not yet pinned down (In The Beginning…, Capital Offense, Bad Luck I Guess, The Truth Is Out There, Ten Pin) the guide says so honestly instead of inventing a method. This is an unofficial fan guide — not affiliated with Rockstar Games. No official artwork or logos are used.</p>
+    <h3>About</h3>
+    <p>Neon Leonida is an unofficial fan guide. It is not affiliated with Rockstar Games, uses no Rockstar logo or official artwork, and works fully offline — no network requests, no accounts, no ads.</p>
   </section>
 </main>
 
 <footer>
-  <p>Neon Leonida — an unofficial GTA VI trophy guide. Works fully offline. Your progress never leaves this browser.</p>
+  <p>Neon Leonida — an unofficial GTA VI trophy guide &amp; tracker. 55 trophies: 1 Platinum, 2 Gold, 6 Silver, 46 Bronze. Keyboard: <kbd>/</kbd> search, <kbd>1</kbd>–<kbd>5</kbd> switch tabs.</p>
 </footer>
 
 <script src="app.js"></script>
