@@ -1,19 +1,18 @@
-// Static file server for local development of the Neon Leonida guide.
-// Run `node serve.ts`, then open http://localhost:8080/ in a desktop browser.
-// Serves only the files under app/ — nothing else leaves this machine.
+// Neon Leonida — local dev server for the GTA VI trophy guide.
+// Run `node serve.ts`, then open http://localhost:8080 in a desktop browser.
+// Serves only the static files under app/; nothing is fetched from the network.
 import { createServer } from 'node:http';
-import { readFile } from 'node:fs/promises';
-import { extname, join, normalize, resolve, sep } from 'node:path';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = resolve(join(fileURLToPath(new URL('.', import.meta.url)), 'app'));
+const appDir = fileURLToPath(new URL('app', import.meta.url));
 const port = Number(process.env.PORT || 8080);
 
 const types: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
-  '.mjs': 'text/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.jpg': 'image/jpeg',
@@ -21,26 +20,19 @@ const types: Record<string, string> = {
   '.png': 'image/png',
 };
 
-const server = createServer(async (req, res) => {
-  try {
-    const url = new URL(req.url || '/', 'http://localhost');
-    let rel = decodeURIComponent(url.pathname);
-    if (rel === '/' || rel === '') rel = '/index.html';
-    const file = resolve(join(root, normalize(rel)));
-    if (!file.startsWith(root + sep) && file !== root) {
-      res.writeHead(403, { 'content-type': 'text/plain' });
-      res.end('Forbidden');
-      return;
-    }
-    const body = await readFile(file);
-    res.writeHead(200, { 'content-type': types[extname(file)] || 'application/octet-stream' });
-    res.end(body);
-  } catch {
-    res.writeHead(404, { 'content-type': 'text/plain' });
-    res.end('Not found');
+const server = createServer((req, res) => {
+  const urlPath = decodeURIComponent((req.url || '/').split('?')[0]);
+  const rel = urlPath === '/' ? 'index.html' : urlPath.replace(/^\/+/, '');
+  const file = join(appDir, rel);
+  if (!file.startsWith(appDir) || !existsSync(file) || !statSync(file).isFile()) {
+    res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
+    res.end('Not found: ' + urlPath + '\n');
+    return;
   }
+  res.writeHead(200, { 'content-type': types[extname(file)] || 'application/octet-stream' });
+  res.end(readFileSync(file));
 });
 
 server.listen(port, () => {
-  console.log(`Neon Leonida guide at http://localhost:${port}/`);
+  console.log('Neon Leonida serving app/ at http://localhost:' + port + '/');
 });

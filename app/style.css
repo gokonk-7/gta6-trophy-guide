@@ -1,182 +1,130 @@
+/* Neon Leonida — dark neon-sunset theme. Own look: no Rockstar logo or artwork. */
 * { box-sizing: border-box; }
 body {
   margin: 0;
   background: #0d0f14;
   color: #ece7dd;
   font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
   line-height: 1.5;
 }
-a { color: #ffc53d; }
-a:hover { color: #ff8a3d; }
-h1, h2, h3 { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; }
-h2 { margin: 0.4em 0 0.3em; font-size: 1.6rem; }
-h3 { margin: 0.6em 0 0.3em; }
-.lede { color: #9aa3b0; max-width: 62em; }
+a { color: #ff8a3d; }
+a:visited { color: #ff5e7a; }
 
-/* Hero */
-.hero { position: relative; overflow: hidden; }
-.skyline { display: block; width: 100%; height: 180px; }
-.hero-text {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: 12px 24px 18px;
-  background: linear-gradient(transparent, rgba(13, 15, 20, 0.88) 78%);
+.hero { position: relative; background: linear-gradient(180deg, #ff5e7a 0%, #ff8a3d 55%, #ffc53d 100%); overflow: hidden; }
+.skyline { display: block; width: 100%; height: 150px; }
+.hero-text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55); }
+.hero-text h1 {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 44px;
+  letter-spacing: 1px;
+  color: #fff;
 }
-.hero-text h1 { margin: 0; font-size: 2.6rem; letter-spacing: 0.02em; color: #fff; }
-.kicker { margin: 0; color: #ffc53d; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
-.tagline { margin: 2px 0 0; color: #d8d2c4; max-width: 60em; }
+.subtitle { margin: 2px 0 0; font-size: 17px; color: #fff; }
+.meta { margin: 4px 0 0; font-size: 13px; color: #ffe9c9; }
 
-main { max-width: 1240px; margin: 0 auto; padding: 0 20px 40px; }
+main { max-width: 1180px; margin: 0 auto; padding: 18px 20px 40px; }
 
-/* Progress */
-.progress {
-  display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
-  background: #161a22; border: 1px solid #262c38; border-radius: 14px;
-  padding: 16px 20px; margin: 20px 0 14px;
-}
-.bigcount { font-family: Georgia, serif; font-size: 2.6rem; line-height: 1; }
-.bigcount .of { font-size: 1.3rem; color: #9aa3b0; }
+.progress { display: flex; gap: 22px; align-items: center; background: #161a22; border: 1px solid #262c38; border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; flex-wrap: wrap; }
+.big-count { font-family: Georgia, "Iowan Old Style", serif; font-size: 46px; line-height: 1; color: #ffc53d; }
+.big-count .of { font-size: 22px; color: #9aa3b0; }
 .progress-mid { flex: 1; min-width: 260px; }
-.bar { height: 12px; background: #262c38; border-radius: 6px; overflow: hidden; }
-.bar.small { height: 9px; margin: 6px 0; }
-.fill { height: 100%; width: 0; background: linear-gradient(90deg, #ff5e7a, #ff8a3d, #ffc53d); transition: width 0.25s; }
-.progress-line { margin: 8px 0 2px; }
-.progress-line #pct { color: #ffc53d; font-weight: 700; }
-.grades { margin: 0; color: #9aa3b0; font-size: 0.9rem; }
-.spoiler-toggle { display: flex; gap: 8px; align-items: center; font-weight: 600; cursor: pointer; }
-.spoiler-toggle .hint { font-weight: 400; color: #9aa3b0; font-size: 0.85rem; }
-input[type="checkbox"] { width: 18px; height: 18px; accent-color: #ff6b4a; }
+.bar { height: 12px; background: #262c38; border-radius: 6px; overflow: hidden; margin: 6px 0; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, #ff5e7a, #ff8a3d, #ffc53d); border-radius: 6px; transition: width 0.25s; }
+.progress-line { font-size: 14px; color: #9aa3b0; }
+.grades { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; font-size: 13px; }
+.grade-stat { display: inline-flex; align-items: center; gap: 6px; }
+.spoiler-toggle { font-size: 14px; color: #ece7dd; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.spoiler-toggle input { width: 18px; height: 18px; accent-color: #ff6b4a; }
 
-/* Tabs */
-.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 16px; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
 .tabs button {
-  background: #161a22; color: #ece7dd; border: 1px solid #262c38;
-  border-radius: 8px; padding: 9px 14px; font-size: 0.95rem; cursor: pointer;
+  background: #161a22; color: #ece7dd; border: 1px solid #262c38; border-radius: 8px;
+  padding: 9px 14px; font-size: 14px; cursor: pointer;
 }
 .tabs button:hover { border-color: #ff6b4a; }
-.tabs button.active { background: #ff6b4a; border-color: #ff6b4a; color: #fff; font-weight: 700; }
-.tabs .key {
-  display: inline-block; min-width: 18px; margin-left: 6px; padding: 0 4px;
-  border: 1px solid currentColor; border-radius: 4px; font-size: 0.75rem; opacity: 0.75;
-}
-.panel { display: none; }
-.panel.active { display: block; }
+.tabs button.active { background: #ff6b4a; border-color: #ff6b4a; color: #fff; font-weight: 600; }
+.tabs .key { opacity: 0.6; font-size: 11px; margin-left: 4px; }
 
-/* Filters */
-.filters {
-  display: flex; gap: 12px; align-items: end; flex-wrap: wrap;
-  background: #161a22; border: 1px solid #262c38; border-radius: 12px;
-  padding: 12px 16px; margin-bottom: 14px;
+.controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.controls input[type="search"] {
+  flex: 1; min-width: 220px; background: #161a22; color: #ece7dd;
+  border: 1px solid #262c38; border-radius: 8px; padding: 9px 12px; font-size: 14px;
 }
-.filters label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: #9aa3b0; }
-.filters input[type="search"] { width: 300px; max-width: 70vw; }
-input, select, textarea {
-  background: #0d0f14; color: #ece7dd; border: 1px solid #3a4152;
-  border-radius: 6px; padding: 8px 10px; font-size: 0.95rem; font-family: inherit;
+.controls select {
+  background: #161a22; color: #ece7dd; border: 1px solid #262c38;
+  border-radius: 8px; padding: 9px 10px; font-size: 14px;
 }
-input:focus, select:focus, textarea:focus { outline: 2px solid #ff6b4a; outline-offset: 1px; border-color: #ff6b4a; }
-.listcount { margin: 0 0 0 auto; color: #9aa3b0; font-size: 0.9rem; }
+.list-count { color: #9aa3b0; font-size: 13px; margin: 4px 0 10px; }
 
-/* Checklist split */
-.split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); gap: 16px; align-items: start; }
-#trophyList {
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+.trophy-list {
   list-style: none; margin: 0; padding: 0;
-  max-height: 640px; overflow-y: auto;
-  background: #161a22; border: 1px solid #262c38; border-radius: 12px;
+  height: 560px; overflow-y: auto; border: 1px solid #262c38; border-radius: 14px; background: #11141b;
 }
 .trophy {
-  display: flex; gap: 10px; padding: 12px 14px;
-  border-bottom: 1px solid #262c38; cursor: pointer;
+  display: flex; gap: 12px; padding: 12px 14px; border-bottom: 1px solid #1d2230; cursor: pointer; align-items: flex-start;
 }
-.trophy:last-child { border-bottom: none; }
-.trophy input[type="checkbox"] { flex-shrink: 0; margin-top: 3px; }
-.trophy:hover { background: #1c212b; }
-.trophy.selected { background: #232936; box-shadow: inset 3px 0 0 #ff6b4a; }
-.trophy.earned .trophy-name { text-decoration: line-through; color: #9aa3b0; }
-.trophy-body { min-width: 0; }
-.trophy-name { font-weight: 700; margin-right: 6px; }
-.trophy-desc { margin: 4px 0 0; color: #b9bfc9; font-size: 0.92rem; }
-.badge {
-  display: inline-block; padding: 1px 8px; border-radius: 20px;
-  font-size: 0.75rem; font-weight: 700; margin-right: 4px; vertical-align: 1px;
-}
-.grade-platinum { background: #d8e1ea; color: #14161d; }
-.grade-gold { background: #d4af5a; color: #14161d; }
-.grade-silver { background: #aeb6bf; color: #14161d; }
-.grade-bronze { background: #b9784c; color: #14161d; }
-.chip {
-  display: inline-block; padding: 1px 7px; margin-right: 4px;
-  border: 1px solid #3a4152; border-radius: 20px;
-  font-size: 0.75rem; color: #9aa3b0; vertical-align: 1px;
-}
-.chip.flag { border-color: #ff6b4a; color: #ff8a6b; font-weight: 700; }
+.trophy:hover { background: #161a22; }
+.trophy.earned { opacity: 0.72; }
+.trophy.earned .trophy-name { text-decoration: line-through; }
+.trophy input[type="checkbox"] { width: 19px; height: 19px; margin-top: 3px; accent-color: #ff6b4a; flex-shrink: 0; cursor: pointer; }
+.t-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.trophy-name { font-weight: 650; font-size: 15px; }
+.trophy-desc { color: #9aa3b0; font-size: 13px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.badge.platinum { background: #d8e1ea; color: #141821; }
+.badge.gold { background: #d4af5a; color: #141821; }
+.badge.silver { background: #aeb6bf; color: #141821; }
+.badge.bronze { background: #b9784c; color: #fff; }
+.chip { display: inline-block; padding: 1px 8px; border-radius: 20px; font-size: 11px; background: #262c38; color: #c6ccd6; }
+.missable-chip { background: #5a1f16; color: #ffb199; }
 
-/* Detail pane */
-#detail {
-  position: sticky; top: 12px;
-  max-height: 640px; overflow-y: auto;
-  background: #161a22; border: 1px solid #262c38; border-radius: 12px; padding: 16px 18px;
+.detail {
+  position: sticky; top: 12px; background: #161a22; border: 1px solid #262c38; border-radius: 14px;
+  padding: 18px; height: 560px; overflow-y: auto;
 }
-#detail h3 { margin-top: 0; font-size: 1.35rem; }
-#detail h4 { margin: 16px 0 6px; font-family: inherit; font-size: 0.95rem; color: #ffc53d; }
+.detail h3 { margin: 0 0 6px; font-family: Georgia, "Iowan Old Style", serif; font-size: 22px; position: sticky; top: -18px; background: #161a22; padding: 6px 0; z-index: 1; }
+.detail h4 { margin: 16px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #ff8a3d; }
+.detail-meta { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 8px; }
+.detail-desc { color: #9aa3b0; font-style: italic; margin: 0 0 8px; }
 .detail-empty { color: #9aa3b0; }
-.detail-meta { color: #9aa3b0; font-size: 0.9rem; }
-.detail-desc { color: #b9bfc9; font-style: italic; }
-.guide { white-space: pre-wrap; }
-.target-line { color: #ffc53d; font-weight: 600; }
-.warning {
-  background: #2a1a14; border: 1px solid #ff6b4a; border-radius: 8px;
-  padding: 10px 12px; color: #ffb59e;
-}
+.guide { margin: 0; }
+.missable-warn { background: #5a1f16; color: #ffb199; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: 14px; }
 .sources { margin: 0; padding-left: 18px; }
 .sources li { margin: 3px 0; }
-#detail textarea { width: 100%; resize: vertical; }
-
-/* Roadmap */
-.phase {
-  background: #161a22; border: 1px solid #262c38; border-radius: 12px;
-  padding: 16px 20px; margin-bottom: 14px;
+.detail textarea {
+  width: 100%; min-height: 74px; background: #0d0f14; color: #ece7dd;
+  border: 1px solid #262c38; border-radius: 8px; padding: 9px 10px; font: inherit; font-size: 14px; resize: vertical;
 }
+
+.tab-panel h2 { font-family: Georgia, "Iowan Old Style", serif; font-size: 28px; margin: 6px 0 8px; }
+.tab-panel h3 { font-size: 18px; margin: 18px 0 6px; }
+.phase { background: #161a22; border: 1px solid #262c38; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
 .phase h3 { margin-top: 0; }
-.phase-count { color: #ffc53d; font-weight: 700; margin: 4px 0 8px; }
-.phase-list { columns: 2; margin: 0; padding-left: 18px; }
-.phase-list li { margin: 2px 0; color: #b9bfc9; break-inside: avoid; }
-.phase-list li.done { color: #7fc98a; }
-
-/* Missables */
-.missable-card {
-  background: #161a22; border: 1px solid #262c38; border-left: 4px solid #ff6b4a;
-  border-radius: 12px; padding: 14px 18px; margin-bottom: 12px;
-}
-.missable-card h3 { margin-top: 0; }
-.flag { color: #ff8a6b; font-size: 0.8rem; letter-spacing: 0.08em; }
-.plain { padding-left: 18px; }
-.plain li { margin: 4px 0; }
-
-/* Planner */
-.nextup { padding-left: 22px; }
-.nextup li {
-  background: #161a22; border: 1px solid #262c38; border-radius: 10px;
-  padding: 10px 14px; margin-bottom: 8px; list-style-position: inside;
-}
-.nextup li strong { color: #ffc53d; }
-
-/* Save */
-.save-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-button, .import-label {
+.phase-list { list-style: none; margin: 10px 0 0; padding: 0; columns: 2; column-gap: 28px; }
+.phase-list li { padding: 3px 0; font-size: 14px; break-inside: avoid; }
+.phase-list li.earned { color: #9aa3b0; text-decoration: line-through; }
+.warn-box { background: #1c1611; border: 1px solid #5a3a1f; border-left: 4px solid #ff8a3d; border-radius: 10px; padding: 12px 16px; margin-bottom: 14px; }
+.warn-box h3 { margin-top: 0; }
+.nextup { list-style: none; margin: 0; padding: 0; }
+.nextup li { background: #161a22; border: 1px solid #262c38; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+.nextup-reason { color: #9aa3b0; font-size: 13px; }
+.save-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.save-row button, .import-label {
   background: #ff6b4a; color: #fff; border: none; border-radius: 8px;
-  padding: 10px 16px; font-size: 0.95rem; font-weight: 700; cursor: pointer;
+  padding: 10px 16px; font-size: 14px; cursor: pointer; display: inline-block;
 }
-button:hover, .import-label:hover { background: #ff7d5e; }
-#importFile { display: none; }
-.status { color: #ffc53d; font-weight: 600; min-height: 1.4em; }
-code { background: #262c38; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.save-row button:hover, .import-label:hover { background: #ff5e3d; }
+.import-label input { display: none; }
+.save-status { color: #ffc53d; min-height: 20px; }
 
-footer { border-top: 1px solid #262c38; margin-top: 30px; padding-top: 14px; color: #9aa3b0; font-size: 0.9rem; }
-kbd { background: #262c38; border: 1px solid #3a4152; border-radius: 4px; padding: 0 6px; font-size: 0.85em; }
-
-@media (max-width: 900px) {
+footer { max-width: 1180px; margin: 0 auto; padding: 0 20px 30px; color: #6b7280; font-size: 12px; }
+@media (max-width: 860px) {
   .split { grid-template-columns: 1fr; }
-  #detail { position: static; max-height: none; }
+  .detail { position: static; height: auto; max-height: 560px; }
   .phase-list { columns: 1; }
-  .hero-text h1 { font-size: 2rem; }
+  .hero-text h1 { font-size: 32px; }
 }
